@@ -11,8 +11,9 @@ Inter body + Fraunces headings.
 
 | Path in repo | Install to | Purpose |
 |---|---|---|
-| `VerifiedTheme/Plugin.php` | `plugins/VerifiedTheme/Plugin.php` | Registers the stylesheet via `template:layout:css` |
+| `VerifiedTheme/Plugin.php` | `plugins/VerifiedTheme/Plugin.php` | Registers the stylesheet via `template:layout:css` and the banner script via `template:layout:js` |
 | `VerifiedTheme/Assets/css/verified.css` | `plugins/VerifiedTheme/Assets/css/verified.css` | Theme CSS |
+| `VerifiedTheme/Assets/js/banner.js` | `plugins/VerifiedTheme/Assets/js/banner.js` | Self-contained "Get yours on Verified Hostings" demo banner (injects styles + markup, dismissal persisted in localStorage) |
 
 ## Install
 

@@ -7,7 +7,9 @@
  * board chrome: Inter throughout, softer cards and menus.
  * ---------------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+/* NOTE: no Google Fonts @import here — Kanboard's Content-Security-Policy
+ * (style-src without fonts.googleapis.com) blocks it and logs console errors.
+ * The --vh-font-* tokens below fall back to the system UI stack instead. */
 
 /* --------------------------------------------------------- brand tokens */
 :root {

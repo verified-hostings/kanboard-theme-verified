@@ -8,7 +8,9 @@ use Kanboard\Core\Plugin\Base;
  * Verified Hostings theme for Kanboard.
  *
  * Registers a single branded stylesheet through the layout CSS hook and a
- * font <link> through the head hook. No templates are overridden.
+ * small self-contained demo-CTA script through the layout JS hook
+ * (dismissible "Get yours on Verified Hostings" bar, persisted in
+ * localStorage). No templates are overridden.
  */
 class Plugin extends Base
 {
@@ -16,6 +18,9 @@ class Plugin extends Base
     {
         $this->hook->on('template:layout:css', array(
             'template' => 'plugins/VerifiedTheme/Assets/css/verified.css',
+        ));
+        $this->hook->on('template:layout:js', array(
+            'template' => 'plugins/VerifiedTheme/Assets/js/banner.js',
         ));
     }
 
@@ -36,7 +41,7 @@ class Plugin extends Base
 
     public function getPluginVersion()
     {
-        return '1.0.0';
+        return '1.1.0';
     }
 
     public function getPluginHomepage()
