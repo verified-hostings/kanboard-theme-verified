@@ -3,29 +3,29 @@
  *
  * Delivered as a plugin; registered via the template:layout:css hook.
  * Re-tokens Kanboard's CSS variables to the verifiedhostings.com palette
- * (deep forest header, brand-purple accents, warm sand surfaces) and polishes
- * board chrome: Inter body, Fraunces headings, softer cards and menus.
+ * (deep forest header, evergreen accents, warm paper surfaces) and polishes
+ * board chrome: Inter throughout, softer cards and menus.
  * ---------------------------------------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
 /* --------------------------------------------------------- brand tokens */
 :root {
-    --vh-brand-50: #f5edfc;
-    --vh-brand-300: #ae82f2;
-    --vh-brand-400: #9750ef;
-    --vh-brand-500: #781dd8;
-    --vh-brand-600: #5f12b8;
-    --vh-brand-700: #4d0e96;
-    --vh-ink: #141810;
-    --vh-haze: #5c6152;
-    --vh-paper: #f7f1e3;
-    --vh-mist: #efe7d2;
-    --vh-sand-hi: #fbf7ec;
-    --vh-line: #e2d2b2;
+    --vh-brand-50: #eef4ee;
+    --vh-brand-300: #9dc4a8;
+    --vh-brand-400: #3f9664;
+    --vh-brand-500: #24834f;
+    --vh-brand-600: #1a6b3c;
+    --vh-brand-700: #14532d;
+    --vh-ink: #181812;
+    --vh-haze: #5d5d54;
+    --vh-paper: #f3efe4;
+    --vh-mist: #eef4ee;
+    --vh-sand-hi: #fafaf7;
+    --vh-line: #e7e5de;
     --vh-forest: #0f3021;
-    --vh-forest-deep: #071b12;
-    --vh-font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --vh-forest-deep: #0e2417;
+    --vh-font-display: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     --vh-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 
     /* Kanboard variable surface */
@@ -33,7 +33,7 @@
     --header-background-color: var(--vh-forest);
     --color-primary: var(--vh-ink);
     --color-light: var(--vh-haze);
-    --color-lighter: #ded4bd;
+    --color-lighter: #d3d8cd;
     --color-medium: #6b705f;
     --link-color-primary: var(--vh-brand-600);
     --link-color-focus: var(--vh-brand-700);
@@ -50,20 +50,20 @@
     --button-primary-color-focus: #fff;
     --button-primary-background-color-focus: var(--vh-brand-500);
     --button-primary-border-color-focus: var(--vh-brand-500);
-    --input-border-color: #ddd5c2;
+    --input-border-color: #d9ded2;
     --input-background-color: #fff;
     --input-focus-border-color: var(--vh-brand-500);
     --input-focus-color: var(--vh-ink);
-    --input-focus-shadow-color: rgba(120, 29, 216, 0.16);
-    --input-placeholder-color: #a29c8b;
+    --input-focus-shadow-color: rgba(36, 131, 79, 0.16);
+    --input-placeholder-color: #9aa294;
     --form-help-color: var(--vh-haze);
     --panel-background-color: #fff;
     --panel-border-color: var(--vh-line);
     --sidebar-border-color: var(--vh-line);
     --table-header-background-color: var(--vh-mist);
     --table-nth-background-color: #fff;
-    --table-border-color: #ede5d2;
-    --table-list-border-color: #ede5d2;
+    --table-border-color: #e6eae2;
+    --table-list-border-color: #e6eae2;
     --table-list-header-background-color: var(--vh-mist);
     --table-list-header-border-color: var(--vh-line);
     --table-list-nth-background-color: #fff;
@@ -71,7 +71,7 @@
     --table-list-row-hover-border-color: var(--vh-brand-300);
     --dropdown-background-color: #fff;
     --dropdown-border-color: var(--vh-line);
-    --dropdown-li-border-color: #f0e9d8;
+    --dropdown-li-border-color: #edf1eb;
     --views-active-color: var(--vh-brand-600);
     --views-background-color: var(--vh-mist);
     --views-border-color: var(--vh-line);
@@ -97,7 +97,7 @@ body {
 }
 
 ::selection {
-    background: rgba(95, 18, 184, 0.18);
+    background: rgba(26, 107, 60, 0.18);
 }
 
 /* ------------------------------------------------------------- header bar */
@@ -123,25 +123,25 @@ header .menus li a:focus,
 header .menus > ul > li > a,
 header nav a,
 header nav a:hover {
-    color: #e9e2d0;
+    color: #e6eae2;
     font-weight: 500;
 }
 
 header .menus li a:hover,
 header nav a:hover {
-    color: #d5b4f5;
+    color: #8fd0a8;
     text-decoration: none;
 }
 
 header .menus li.dropdown a.dropdown-menu,
 header .dropdown > a {
-    color: #e9e2d0;
+    color: #e6eae2;
 }
 
 /* keep header icons legible */
 header a .fa,
 header a .fa::before {
-    color: #d8d0ba;
+    color: #cdd6cc;
 }
 
 /* --------------------------------------------------------------- sidebar */
@@ -165,7 +165,7 @@ header a .fa::before {
 
 .sidebar > ul li a:hover {
     color: var(--vh-brand-700);
-    background-color: rgba(95, 18, 184, 0.05);
+    background-color: rgba(26, 107, 60, 0.05);
 }
 
 .sidebar h2 {
@@ -222,16 +222,16 @@ header a .fa::before {
 }
 
 .task-board {
-    border: 1px solid #ece4d1;
+    border: 1px solid #e6eae2;
     border-left-width: 3px;
     border-radius: 10px;
-    box-shadow: 0 1px 2px rgba(18, 16, 29, 0.04), 0 8px 20px -14px rgba(18, 16, 29, 0.12);
+    box-shadow: 0 1px 2px rgba(14, 36, 23, 0.04), 0 8px 20px -14px rgba(14, 36, 23, 0.12);
     transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
 
 .task-board:hover {
     border-color: var(--vh-brand-300);
-    box-shadow: 0 2px 4px rgba(18, 16, 29, 0.05), 0 14px 30px -14px rgba(18, 16, 29, 0.2);
+    box-shadow: 0 2px 4px rgba(14, 36, 23, 0.05), 0 14px 30px -14px rgba(14, 36, 23, 0.2);
 }
 
 .task-board .task-board-title a {
@@ -246,7 +246,7 @@ header a .fa::before {
 /* keep swimlane headers tidy */
 .board-swimlane-toggle td,
 .board-swimlane {
-    background: rgba(239, 231, 210, 0.6);
+    background: rgba(238, 244, 238, 0.7);
 }
 
 /* --------------------------------------------------------------- buttons */
@@ -275,7 +275,7 @@ header a .fa::before {
 .dropdown-menu,
 .dropdown-submenu-open {
     border-radius: 10px;
-    box-shadow: 0 2px 6px rgba(18, 16, 29, 0.08), 0 18px 44px -18px rgba(18, 16, 29, 0.3);
+    box-shadow: 0 2px 6px rgba(14, 36, 23, 0.08), 0 18px 44px -18px rgba(14, 36, 23, 0.3);
     font-family: var(--vh-font-body);
 }
 
@@ -294,7 +294,7 @@ header a .fa::before {
     border-top: 4px solid var(--vh-brand-600);
     border-radius: 16px;
     padding: 32px 30px 24px;
-    box-shadow: 0 1px 2px rgba(18, 16, 29, 0.05), 0 18px 44px -18px rgba(18, 16, 29, 0.22);
+    box-shadow: 0 1px 2px rgba(14, 36, 23, 0.05), 0 18px 44px -18px rgba(14, 36, 23, 0.22);
 }
 
 .form-login label {
@@ -328,6 +328,12 @@ header a .fa::before {
     color: var(--vh-brand-600);
 }
 
+/* checkboxes/radios pick up the brand instead of the UA blue */
+input[type="checkbox"],
+input[type="radio"] {
+    accent-color: var(--vh-brand-600);
+}
+
 /* ---------------------------------------------------------------- inputs */
 input[type="text"],
 input[type="password"],
@@ -345,7 +351,7 @@ select,
 /* -------------------------------------------------------------- modals */
 .modal-box {
     border-radius: 14px;
-    box-shadow: 0 2px 6px rgba(18, 16, 29, 0.1), 0 24px 56px -16px rgba(18, 16, 29, 0.3);
+    box-shadow: 0 2px 6px rgba(14, 36, 23, 0.1), 0 24px 56px -16px rgba(14, 36, 23, 0.3);
     font-family: var(--vh-font-body);
 }
 
