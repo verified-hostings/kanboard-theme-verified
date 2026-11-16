@@ -1,0 +1,366 @@
+/* ----------------------------------------------------------------------------
+ * Verified Hostings — Kanboard theme ("VerifiedTheme")
+ *
+ * Delivered as a plugin; registered via the template:layout:css hook.
+ * Re-tokens Kanboard's CSS variables to the verifiedhostings.com palette
+ * (deep forest header, brand-purple accents, warm sand surfaces) and polishes
+ * board chrome: Inter body, Fraunces headings, softer cards and menus.
+ * ---------------------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* --------------------------------------------------------- brand tokens */
+:root {
+    --vh-brand-50: #f5edfc;
+    --vh-brand-300: #ae82f2;
+    --vh-brand-400: #9750ef;
+    --vh-brand-500: #781dd8;
+    --vh-brand-600: #5f12b8;
+    --vh-brand-700: #4d0e96;
+    --vh-ink: #141810;
+    --vh-haze: #5c6152;
+    --vh-paper: #f7f1e3;
+    --vh-mist: #efe7d2;
+    --vh-sand-hi: #fbf7ec;
+    --vh-line: #e2d2b2;
+    --vh-forest: #0f3021;
+    --vh-forest-deep: #071b12;
+    --vh-font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --vh-font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    /* Kanboard variable surface */
+    --body-background-color: var(--vh-paper);
+    --header-background-color: var(--vh-forest);
+    --color-primary: var(--vh-ink);
+    --color-light: var(--vh-haze);
+    --color-lighter: #ded4bd;
+    --color-medium: #6b705f;
+    --link-color-primary: var(--vh-brand-600);
+    --link-color-focus: var(--vh-brand-700);
+    --link-color-hover: var(--vh-brand-700);
+    --button-default-color: var(--vh-ink);
+    --button-default-background-color: var(--vh-sand-hi);
+    --button-default-border-color: var(--vh-line);
+    --button-default-color-focus: var(--vh-brand-700);
+    --button-default-background-color-focus: var(--vh-brand-50);
+    --button-default-border-color-focus: var(--vh-brand-400);
+    --button-primary-color: #fff;
+    --button-primary-background-color: var(--vh-brand-600);
+    --button-primary-border-color: var(--vh-brand-600);
+    --button-primary-color-focus: #fff;
+    --button-primary-background-color-focus: var(--vh-brand-500);
+    --button-primary-border-color-focus: var(--vh-brand-500);
+    --input-border-color: #ddd5c2;
+    --input-background-color: #fff;
+    --input-focus-border-color: var(--vh-brand-500);
+    --input-focus-color: var(--vh-ink);
+    --input-focus-shadow-color: rgba(120, 29, 216, 0.16);
+    --input-placeholder-color: #a29c8b;
+    --form-help-color: var(--vh-haze);
+    --panel-background-color: #fff;
+    --panel-border-color: var(--vh-line);
+    --sidebar-border-color: var(--vh-line);
+    --table-header-background-color: var(--vh-mist);
+    --table-nth-background-color: #fff;
+    --table-border-color: #ede5d2;
+    --table-list-border-color: #ede5d2;
+    --table-list-header-background-color: var(--vh-mist);
+    --table-list-header-border-color: var(--vh-line);
+    --table-list-nth-background-color: #fff;
+    --table-list-row-background-color: var(--vh-brand-50);
+    --table-list-row-hover-border-color: var(--vh-brand-300);
+    --dropdown-background-color: #fff;
+    --dropdown-border-color: var(--vh-line);
+    --dropdown-li-border-color: #f0e9d8;
+    --views-active-color: var(--vh-brand-600);
+    --views-background-color: var(--vh-mist);
+    --views-border-color: var(--vh-line);
+    --activity-title-color: var(--vh-ink);
+    --activity-title-border-color: var(--vh-line);
+    --activity-event-background-color: #fff;
+    --activity-event-hover-color: var(--vh-brand-50);
+    --alert-background-color-info: var(--vh-brand-50);
+    --alert-border-color-info: var(--vh-brand-300);
+    --alert-color-info: var(--vh-brand-700);
+    --task-list-icons-color: var(--vh-haze);
+    --comment-title-border-color: var(--vh-line);
+    --comment-nth-background-color: #fff;
+    --board-task-limit-color: #b94a48;
+}
+
+/* -------------------------------------------------------------------- base */
+body {
+    font-family: var(--vh-font-body);
+    font-size: 0.9375rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+    background: rgba(95, 18, 184, 0.18);
+}
+
+/* ------------------------------------------------------------- header bar */
+header {
+    box-shadow: 0 1px 0 rgba(7, 27, 18, 0.55), 0 8px 24px -16px rgba(7, 27, 18, 0.7);
+}
+
+header .logo a,
+header .logo a:hover,
+header .logo a:focus {
+    font-family: var(--vh-font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    color: #fbf7ec;
+    text-decoration: none;
+}
+
+/* nav actions inside the forest bar must stay light */
+header .menus li a,
+header .menus li a:hover,
+header .menus li a:focus,
+header .menus > ul > li > a,
+header nav a,
+header nav a:hover {
+    color: #e9e2d0;
+    font-weight: 500;
+}
+
+header .menus li a:hover,
+header nav a:hover {
+    color: #d5b4f5;
+    text-decoration: none;
+}
+
+header .menus li.dropdown a.dropdown-menu,
+header .dropdown > a {
+    color: #e9e2d0;
+}
+
+/* keep header icons legible */
+header a .fa,
+header a .fa::before {
+    color: #d8d0ba;
+}
+
+/* --------------------------------------------------------------- sidebar */
+.sidebar {
+    border-radius: 0;
+}
+
+.sidebar > ul li a {
+    font-weight: 500;
+    border-radius: 8px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar > ul li.active a,
+.sidebar > ul li.active a:hover,
+.sidebar > ul li.active a:focus {
+    color: var(--vh-brand-700);
+    font-weight: 600;
+    background-color: var(--vh-brand-50);
+}
+
+.sidebar > ul li a:hover {
+    color: var(--vh-brand-700);
+    background-color: rgba(95, 18, 184, 0.05);
+}
+
+.sidebar h2 {
+    font-family: var(--vh-font-body);
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--vh-haze);
+}
+
+/* ------------------------------------------------------------ page head */
+.page-header h2,
+.page-header h3,
+.page-header .dropdown > a,
+.page-header ul li a {
+    font-family: var(--vh-font-body);
+}
+
+.page-header h2 {
+    font-family: var(--vh-font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--vh-ink);
+}
+
+.page-header {
+    border-bottom: 1px solid var(--vh-line);
+}
+
+.views > a:hover {
+    color: var(--vh-brand-600);
+}
+
+/* -------------------------------------------------------------- the board */
+.board-column-header {
+    font-family: var(--vh-font-body);
+    border-radius: 10px;
+    background: var(--vh-mist);
+    border: 1px solid var(--vh-line);
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.board-column-header .board-column-title a,
+.board-column-header .board-column-title {
+    font-weight: 600;
+    color: var(--vh-ink);
+}
+
+.board-column-header .board-column-header-task-count {
+    color: var(--vh-haze);
+    font-weight: 600;
+}
+
+.task-board {
+    border: 1px solid #ece4d1;
+    border-left-width: 3px;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px rgba(18, 16, 29, 0.04), 0 8px 20px -14px rgba(18, 16, 29, 0.12);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.task-board:hover {
+    border-color: var(--vh-brand-300);
+    box-shadow: 0 2px 4px rgba(18, 16, 29, 0.05), 0 14px 30px -14px rgba(18, 16, 29, 0.2);
+}
+
+.task-board .task-board-title a {
+    font-weight: 600;
+    color: var(--vh-ink);
+}
+
+.task-board .task-board-title a:hover {
+    color: var(--vh-brand-600);
+}
+
+/* keep swimlane headers tidy */
+.board-swimlane-toggle td,
+.board-swimlane {
+    background: rgba(239, 231, 210, 0.6);
+}
+
+/* --------------------------------------------------------------- buttons */
+.btn {
+    font-family: var(--vh-font-body);
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 16px;
+    transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-blue {
+    background-color: var(--vh-brand-600);
+    border-color: var(--vh-brand-600);
+    color: #fff;
+}
+
+.btn-blue:hover,
+.btn-blue:focus {
+    background-color: var(--vh-brand-500);
+    border-color: var(--vh-brand-500);
+    color: #fff;
+}
+
+/* ------------------------------------------------------------ dropdowns */
+.dropdown-menu,
+.dropdown-submenu-open {
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(18, 16, 29, 0.08), 0 18px 44px -18px rgba(18, 16, 29, 0.3);
+    font-family: var(--vh-font-body);
+}
+
+.dropdown-submenu-open li a:hover,
+.dropdown-menu li a:hover,
+.dropdown-menu li.no-hover:hover {
+    background-color: var(--vh-brand-50);
+    color: var(--vh-brand-700);
+}
+
+/* ------------------------------------------------------------ form login */
+.form-login {
+    font-family: var(--vh-font-body);
+    background: #fff;
+    border: 1px solid var(--vh-line);
+    border-top: 4px solid var(--vh-brand-600);
+    border-radius: 16px;
+    padding: 32px 30px 24px;
+    box-shadow: 0 1px 2px rgba(18, 16, 29, 0.05), 0 18px 44px -18px rgba(18, 16, 29, 0.22);
+}
+
+.form-login label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--vh-ink);
+}
+
+.form-login input[type="text"],
+.form-login input[type="password"] {
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 1rem;
+}
+
+.form-login .form-actions {
+    margin-top: 18px;
+}
+
+.form-login .btn {
+    width: 100%;
+    padding: 11px 16px;
+    border-radius: 999px;
+}
+
+.form-login .reset-password a {
+    color: var(--vh-haze);
+}
+
+.form-login .reset-password a:hover {
+    color: var(--vh-brand-600);
+}
+
+/* ---------------------------------------------------------------- inputs */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+input[type="url"],
+textarea,
+select,
+.input-addon {
+    border-radius: 8px;
+    font-family: var(--vh-font-body);
+}
+
+/* -------------------------------------------------------------- modals */
+.modal-box {
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(18, 16, 29, 0.1), 0 24px 56px -16px rgba(18, 16, 29, 0.3);
+    font-family: var(--vh-font-body);
+}
+
+#modal-box-header {
+    font-weight: 600;
+}
+
+/* -------------------------------------------------------------- mobile */
+@media (max-width: 800px) {
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="number"],
+    select,
+    textarea {
+        font-size: 16px; /* iOS zoom guard */
+    }
+}
